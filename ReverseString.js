@@ -5,21 +5,8 @@ if the input string is "Hello World and Coders" then
 your program should return the string sredoC dna dlroW
 olleH. */
 
-
-
 function ReverseString(str) { 
 const separatedString = str.split("");
-alert(separatedString);
-
-
-    // code goes here  
-    // return str; 
-string.FirstReverse           
   }
-     
-  // keep this function call here 
-  FirstReverse(readline());
-  ReverseString("abcd");
 
-
-
+ReverseString("abcd");
