@@ -17,6 +17,6 @@ return reversedString;
 
 let result1 = ReverseString("abcd");
 console.log(result1);
-let result2 = ReverseString("Расцветали яблони и груши, Поплыли туманы над рекой, Выходила на берег Катюша, На высокий берег, на крутой.");
+let result2 = ReverseString("Расцветали яблони и груши.");
 console.log(result2);
 
