@@ -1,11 +1,14 @@
 function getFactorial(num) {
-    let interm = num;
-    for (let i = num; i < num; i--) {
-      interm = interm * interm - 1;
+    const sourceNumber = num;
+    let result = num;
+      (let i = 0; i < sourceNumber; i++) {
+      result = result * --num;
+      console.log(`Intermediate result is ${result}`);
+      if (num == 1) {break}
     }
 
-    return interm;
+    return result;
 }
 
-result = getFactorial(3);
+result = getFactorial(8);
 console.log(result);
