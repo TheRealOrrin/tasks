@@ -1,14 +1,11 @@
 function getFactorial(num) {
-    const sourceNumber = num;
-    let result = num;
-      (let i = 0; i < sourceNumber; i++) {
+  let result = num;
+    while (num > 1) {
       result = result * --num;
-      console.log(`Intermediate result is ${result}`);
-      if (num == 1) {break}
-    }
-
+      }
     return result;
 }
 
-result = getFactorial(8);
-console.log(result);
+let number = prompt("Please enter the number of which you want the factorial", "Type a number here");
+
+alert(`The factorial of ${number} is ${getFactorial(number)}.`);
