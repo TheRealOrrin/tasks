@@ -41,4 +41,5 @@ return separatedCharacters.join("");
 
 let someString = prompt("Please enter the string you want to change", "Type here");
 
-alert(`The result of this function upon your string "${someString}" is this string: ${letterChanger(someString)}.`);
+alert(`The result of this function upon your string "${someString}"
+ is this string: ${letterChanger(someString)}.`);
