@@ -1,6 +1,12 @@
+import './style.css';
+
+const appDiv = document.getElementById('app');
+const input  = document.getElementById('input');
+
+
 function letterChanger(str) {
   let separatedCharacters = str.split("");
-  const alphaBet = ["", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+  const alphaBet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 for(let i = 0; i < separatedCharacters.length; i++) {
@@ -13,9 +19,8 @@ function changeCharacters(character) {
 
   if (alphaBet.includes(middleCharacter)) {
     let characterIndex = alphaBet.indexOf(middleCharacter);
-    characterIndex = characterIndex + 1;
-    if (characterIndex == 27) { characterIndex = 1;}
-    middleCharacter = alphaBet[characterIndex];
+    characterIndex += 27;
+    middleCharacter = alphaBet[characterIndex % alphaBet.length];
      
     if (character == character.toLowerCase()) {
       switchedCharacter = middleCharacter.toUpperCase();
@@ -36,10 +41,7 @@ return separatedCharacters.join("");
 
 }
 
-//let result = letterChanger("AbCd&z");
-//console.log(result); 
+input.addEventListener('input', function() {
+  appDiv.innerHTML = letterChanger(input.value);
+})
 
-let someString = prompt("Please enter the string you want to change", "Type here");
-
-alert(`The result of this function upon your string "${someString}"
- is this string: ${letterChanger(someString)}.`);
