@@ -6,12 +6,11 @@ const input  = document.getElementById('input');
 function numberAdder(num) {
     let result = num;
     while(num > 0) {
-        result = result + --num;
+        result += --num;
     }
-    return result;
+    return result; 
 }
 
-console.log(numberAdder(140));
-
 input.addEventListener('input', function() {
-    appDiv.innerHTML = letterChanger(input.value);
+    appDiv.innerHTML = numberAdder(Number(input.value));
+})
