@@ -18,8 +18,6 @@ function timeConvert(num) {
     
 }
 
-console.log(timeConvert(123));
-
 input.addEventListener('input', function() {
     appDiv.innerHTML = timeConvert(input.value);
 })
