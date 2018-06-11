@@ -14,8 +14,8 @@ function timeConvert(num) {
     if (numOfMinutes == 1) {minute = "minute";}
     else {minute = "minutes";}
 
-    return `${num} minutes is equal to ${numOfHours} ${hour}
-            and ${numOfMinutes} ${minute}.`;
+    
+    
 }
 
 console.log(timeConvert(123));
