@@ -11,7 +11,6 @@ function sortingExercise(str) {
     for(let i = 0; i < looseCharArray.length; i++) {
       if(looseCharArray[i] > looseCharArray[i + 1]) {
         looseCharArray = (swapPlace(i + 1, i, looseCharArray));
-        console.log(looseCharArray);
       }
     }
 
