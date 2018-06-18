@@ -11,7 +11,7 @@ function pentagonalNumber(num) {
     return dots;
 }
 
-return `${num} iterations will result in a pentagon of ${dots} dots.`;
+return `${++num} iterations will result in a pentagon of ${dots} dots.`;
 
 input.addEventListener('keydown', function(event) {
     if(event.code === 'Enter') {
