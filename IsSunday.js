@@ -3,8 +3,7 @@ const appDiv = document.getElementById("app");
 const button = document.getElementById("button");
 
 function isSunday(year) {
-  const date = new Date();
-  date.setFullYear(year, 0, 1);
+  const date = new Date(year, 0, 1);
   return date.getDay() == 0 ? `1st January of ${year} is a Sunday.`
                             : `1st January of ${year} is not a Sunday.`;
 }
