@@ -1,0 +1,498 @@
+<!-- my first attempt at HTML after twenty years :):):) --->
+
+<!DOCTYPE html>
+<head>
+    <title>Stranichka</title>
+    <!--    <link rel="stylesheet" type="text/css" href="stylesheet1.css">    --->
+
+  <!-- STYLESHEET 1 --->
+    <style>
+        body {
+
+            line-height: 26px;
+            font-family: "Lucida Sans";
+            margin: 20px;
+            overflow: auto;
+        }
+
+        #the-whole-thing {
+            /*position: relative; I don't see why this is necessary */
+            overflow: auto;
+            /*The overflow property specifies what should happen if content overflows an element's box.
+              This property specifies whether to clip content or to add scrollbars when an element's content
+              is too big to fit in a specified area.*/
+            /*It doesn't seem to make a difference as to scrollbars. It does make a difference to the relative
+              height of the body element. Strange. */
+            /*xmin-width: 900px;*/
+            /*I don't say difference in behavior without it and I can't find much about "xmin"*/ 
+        }
+
+        #opening {
+            background-color: rgb(56, 168, 77);
+            color: white;  
+            border-radius: 4px;
+            padding: 15px;
+            margin: 4px;
+        }
+        /*To find the right color I use an online color picker: http://hslpicker.com/#38a84d*/
+
+        #opening h1, #opening p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #middle {
+            /*overflow: auto;*/
+            /*Also here I don't see an effect*/
+            position: relative;
+            /*Here it makes sure that the elements within middle (maintext, sidebar and under)
+            don't overlap*/
+            /*xmin-width: 900px;*/
+            /*No apparent effect here either*/
+        }
+
+        #menu {
+            /*position: relative;*/
+            /*Doesn't seem necessary*/
+            /*overflow: auto;*/
+            /*Also here I don't see an effect*/
+            float: left;
+            /*Allows an element to be adjacent (and to the left) of another element, without pushing it down.
+            Any text from the adjacent element will wrap around*/
+            width: 200px;  
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #menu li:hover {
+            background-color: white;
+        }
+
+        #menu li {
+            list-style-type: none;
+            padding: 2px;
+            border-radius: 4px;
+            background-color: whitesmoke;
+            margin: 4px;
+            border: 1px solid lightgrey;
+            cursor: pointer;
+        }
+
+        #menu li:first-child {
+            background-color: rgb(56, 168, 77);
+            color: white;
+            font-weight: bold;
+        }
+
+        #maintext {
+            padding: 10px;
+            margin: 0 210px;
+        }
+        /*If shorthand has two values they are top+bottom and left+right
+          An absolute positioning of the main text, 10 px right from menu*/
+
+        #rightside {
+            background-color: rgb(50, 161, 205);
+            width: 180px;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 4px;
+            color: white;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            position: absolute;
+        }
+        /*Parent element is 'middle', the top, right and bottom values determine how it is positioned in
+          its parent because of absolut position. The bottom value makes sure the box is filled out as
+          far as the parent allow.*/
+
+        #under {
+            font-size: 70%;
+            padding: 10px;
+            background-color: whitesmoke;
+            border: 1px solid lightgrey;
+            margin: 4px;
+            text-align: center;
+            line-height: 14px;
+        }
+
+        a {
+            color: black;
+            text-decoration: underline;
+            /*Browser will already underline link, so seems unnecessary*/
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 800px) {
+            #rightside {
+                width: auto;
+                position: relative;
+            } 
+            #maintext {
+                margin-right: 0;
+            }           
+        }
+
+        @media (max-width: 600px) {
+            #menu {
+                width: auto;
+                float: none;
+            }
+            #maintext {
+                margin: 0;
+            }    
+        }
+        /*The @media things will control the behavior in different browsers/screen sizes/media.
+          I didn't look into this, just copied it directly from the example.*/
+    </style>
+
+  <!-- STYLESHEET 2 --->
+    <style>
+        body {
+
+            font-family: Arial;
+            background-color: rgb(194, 66, 46);
+            line-height: 20px;
+        }
+
+        #the-whole-thing {
+            position: relative;
+            overflow: auto;
+            xmin-width: 900px;
+        }
+
+        #opening {
+            color: white;  
+            padding: 15px;
+            font-size: 30px;
+            line-height: 26px;
+        }
+
+        #opening h1 {
+            margin: 0;
+            line-height: 50px;
+        }
+
+        #middle {
+            overflow: auto;
+            position: relative;
+            xmin-width: 900px;
+            background-color: white;
+        }
+
+        #menu {
+            float: right;
+            width: 190px;  
+        }
+
+        ul {
+            font: 16px verdana;
+            padding: 0px;
+        }
+
+        #menu li:hover {
+            background-color: white;
+            color: rgb(194, 66, 46);
+        }
+
+        #menu li {
+            width: 155px;
+            background-color: rgb(194, 66, 46);
+            border: 1px solid rgb(194, 66, 46);
+            border-radius: 40px;
+            color: white;
+            list-style-type: none;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #menu li:nth-child(2) {
+            background-color: white;
+            color: rgb(194, 66, 46);
+            font-weight: bold;
+        }
+
+        #maintext {
+            padding: 10px;
+            font: 80% Verdana;
+        }
+
+        #maintext h1, h2 {
+            color: rgb(194, 66, 46);
+        }
+
+        #rightside {
+            background-color: rgb(234, 207, 199);
+            padding: 10px;
+            color: rgb(194, 66, 46);
+        }
+
+        #under {
+            font-size: 70%;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        a {
+            color: rgb(194, 66, 46);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+  <!-- STYLESHEET 3 --->
+    <style>
+       body {
+
+            font: 100% Verdana;
+            margin: 20px;
+            line-height: 26px;
+        }
+
+        #the-whole-thing {
+            xmin-width: 900px;
+            position: relative;
+            overflow: auto;
+        }
+
+        #middle {
+            position: relative;
+            overflow: auto;
+        }
+
+        #rightside {
+            background-color: whitesmoke;
+            border: 1px solid lightgrey;
+            padding-left: 10px;
+        }
+
+        #under {
+            text-align: center;
+            padding: 10px;
+            font-size: 70%;
+            line-height: 14px;
+        }
+
+        h1, h2, h3 {
+            color: rgb(56, 168, 77);
+        }
+
+        ul {
+            padding: 0;
+            position: relative;
+            overflow: auto;
+        }
+
+        #menu li {
+            width: 165px;
+            float: left;
+            background-color: rgb(85, 85, 85);
+            color: white;
+            list-style-type: none;
+            margin: 4px;
+            padding: 2px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #menu li:nth-child(3) {
+            background-color: rgb(56, 168, 77);
+        }
+
+        #menu li:hover {
+            background-color: rgb(153, 153, 153);
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            color: rgb(56, 168, 77);
+        }
+    </style>
+
+  <!-- STYLESHEET 4 --->
+    <style>
+        body {
+
+            font-family: "Courier New";
+            margin: 20px;
+            line-height: 26px;
+            background-color: black;
+            color: rgb(121, 185, 65);
+        }
+
+        #the-whole-thing {
+            position: relative;
+            overflow: auto;
+            xmin-width: 900px;
+        }
+
+        #middle {
+            overflow: auto;
+            position: relative;
+        }
+
+        #opening {
+            padding: 15px;
+        }
+
+        #maintext {
+            padding: 10px;
+        }
+
+        #rightside {
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+            padding: 10px;
+            width: 320px;
+            top: 0;
+            right: 0;
+            position: absolute;
+            font-size: 80%;
+            line-height: 20px;
+        }
+
+        #under {
+            border: 1px solid white;
+            border-radius: 4px;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 70%;
+            line-height: 14px;
+        }
+
+        #opening h1, #opening p {
+            margin: 0;
+        }
+
+        #menu li {
+            cursor: pointer;
+        }
+
+        #menu li:nth-child(4) {
+            color: white;
+            font-weight: bold;
+        }
+
+        #menu li:hover {
+            color: white;
+        }
+  
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: rgb(121, 185, 65);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- In my own words: The division between opening, middle and under gives a good vertical spatial division. Duh!!
+         In the middle there is the menu, that floats left, the the main text that will wrap around it, but is kept in
+         the middle by specifying a 210 px margin. The Side-Bar is kept in its right place by positioning it absolute,
+         so it will take on a position in its parent element, specified by top, right and bottom margins.
+	 I don't see well why the "the-whole-thing" element is necessary, why isn't it enough to have a body?
+         Idea: this whole thing was designed to be put in larger text, so it can be independent there. --->
+
+    <div id="the-whole-thing">
+
+        <div id="opening">
+            <h1>Welcome to My Homepage</h1>
+            <p>Use the menu to select different Stylesheets</p>
+        </div>
+
+        <div id="middle">
+
+            <div id="menu">
+                <div>
+                    <ul>
+                        <li onclick="changeStyle(0)">Stylesheet 1
+                        <li onclick="changeStyle(1)">Stylesheet 2
+                        <li onclick="changeStyle(2)">Stylesheet 3
+                        <li onclick="changeStyle(3)">Stylesheet 4
+                        <li onclick="removeStyle()">No Stylesheet
+                        <!--- Apparently, a closing tag is not necessary --->
+                    </ul>
+                </div>
+            </div>
+
+            <div id="maintext">
+                <h1>Same Page Different Stylesheets</h1>
+                <p> This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:
+                    <br>
+                    <a href="*" onclick="changeStyle(0);return false">Stylesheet1</a>,
+                    <a href="*" onclick="changeStyle(1);return false">Stylesheet2</a>,
+                    <a href="*" onclick="changeStyle(2);return false">Stylesheet3</a>,
+                    <a href="*" onclick="changeStyle(3);return false">Stylesheet4</a>.
+                    <!-- With href you get a real looking link, with a hand-shaped cursor. If you don't want it to change
+                    the color of the link, once visited, apparently you can give it any name (only # as in the example
+                    doesn't work funnily enough)oesn't work), it will change the color of the link, once visited.
+                    'return false' makes sure that the link isn't actually followed (good, because it is just a token)
+                    I don't fully understand this yet. --->
+                </p>
+                <h2>No Styles</h2>
+                <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:
+                    <br>
+                    <a href="*" onclick="removeStyle();return false">No Stylesheet</a>.
+                </p>
+            </div>
+
+            <div id="rightside">
+	        <h3>Side-Bar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                </p>
+            </div>
+
+        </div>
+
+        <div id="under">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. 
+        </div>
+    </div>
+
+    <script>
+        function resetStyle() {
+            document.styleSheets[0].disabled = false;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;
+        }
+
+        function changeStyle(n) {
+            removeStyle();
+            document.styleSheets[n].disabled = false;
+        }
+
+        function removeStyle() {
+            document.styleSheets[0].disabled = true;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;            
+        }
+
+        resetStyle();
+        /*This all speaks for itself. I took this idea obviously from the example and it works well*/
+
+    </script>
+
+</body>
