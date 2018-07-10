@@ -1,9 +1,6 @@
-<!-- my first attempt at HTML after twenty years :):):) --->
-
 <!DOCTYPE html>
 <head>
     <title>Stranichka</title>
-    <!--    <link rel="stylesheet" type="text/css" href="stylesheet1.css">    --->
 
   <!-- STYLESHEET 1 --->
     <style>
@@ -16,16 +13,8 @@
         }
 
         #the-whole-thing {
-            /*position: relative; I don't see why this is necessary */
             overflow: auto;
-            /*The overflow property specifies what should happen if content overflows an element's box.
-              This property specifies whether to clip content or to add scrollbars when an element's content
-              is too big to fit in a specified area.*/
-            /*It doesn't seem to make a difference as to scrollbars. It does make a difference to the relative
-              height of the body element. Strange. */
-            /*xmin-width: 900px;*/
-            /*I don't say difference in behavior without it and I can't find much about "xmin"*/ 
-        }
+            }
 
         #opening {
             background-color: rgb(56, 168, 77);
@@ -34,7 +23,6 @@
             padding: 15px;
             margin: 4px;
         }
-        /*To find the right color I use an online color picker: http://hslpicker.com/#38a84d*/
 
         #opening h1, #opening p {
             margin: 0;
@@ -42,23 +30,11 @@
         }
 
         #middle {
-            /*overflow: auto;*/
-            /*Also here I don't see an effect*/
             position: relative;
-            /*Here it makes sure that the elements within middle (maintext, sidebar and under)
-            don't overlap*/
-            /*xmin-width: 900px;*/
-            /*No apparent effect here either*/
         }
 
         #menu {
-            /*position: relative;*/
-            /*Doesn't seem necessary*/
-            /*overflow: auto;*/
-            /*Also here I don't see an effect*/
             float: left;
-            /*Allows an element to be adjacent (and to the left) of another element, without pushing it down.
-            Any text from the adjacent element will wrap around*/
             width: 200px;  
         }
 
@@ -91,8 +67,6 @@
             padding: 10px;
             margin: 0 210px;
         }
-        /*If shorthand has two values they are top+bottom and left+right
-          An absolute positioning of the main text, 10 px right from menu*/
 
         #rightside {
             background-color: rgb(50, 161, 205);
@@ -106,9 +80,6 @@
             bottom: 0px;
             position: absolute;
         }
-        /*Parent element is 'middle', the top, right and bottom values determine how it is positioned in
-          its parent because of absolut position. The bottom value makes sure the box is filled out as
-          far as the parent allow.*/
 
         #under {
             font-size: 70%;
@@ -123,7 +94,6 @@
         a {
             color: black;
             text-decoration: underline;
-            /*Browser will already underline link, so seems unnecessary*/
         }
 
         a:hover {
@@ -149,8 +119,6 @@
                 margin: 0;
             }    
         }
-        /*The @media things will control the behavior in different browsers/screen sizes/media.
-          I didn't look into this, just copied it directly from the example.*/
     </style>
 
   <!-- STYLESHEET 2 --->
@@ -328,7 +296,6 @@
   <!-- STYLESHEET 4 --->
     <style>
         body {
-
             font-family: "Courier New";
             margin: 20px;
             line-height: 26px;
@@ -407,13 +374,6 @@
 </head>
 
 <body>
-    <!-- In my own words: The division between opening, middle and under gives a good vertical spatial division. Duh!!
-         In the middle there is the menu, that floats left, the the main text that will wrap around it, but is kept in
-         the middle by specifying a 210 px margin. The Side-Bar is kept in its right place by positioning it absolute,
-         so it will take on a position in its parent element, specified by top, right and bottom margins.
-	 I don't see well why the "the-whole-thing" element is necessary, why isn't it enough to have a body?
-         Idea: this whole thing was designed to be put in larger text, so it can be independent there. --->
-
     <div id="the-whole-thing">
 
         <div id="opening">
@@ -444,11 +404,6 @@
                     <a href="*" onclick="changeStyle(1);return false">Stylesheet2</a>,
                     <a href="*" onclick="changeStyle(2);return false">Stylesheet3</a>,
                     <a href="*" onclick="changeStyle(3);return false">Stylesheet4</a>.
-                    <!-- With href you get a real looking link, with a hand-shaped cursor. If you don't want it to change
-                    the color of the link, once visited, apparently you can give it any name (only # as in the example
-                    doesn't work funnily enough)oesn't work), it will change the color of the link, once visited.
-                    'return false' makes sure that the link isn't actually followed (good, because it is just a token)
-                    I don't fully understand this yet. --->
                 </p>
                 <h2>No Styles</h2>
                 <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:
@@ -491,8 +446,6 @@
         }
 
         resetStyle();
-        /*This all speaks for itself. I took this idea obviously from the example and it works well*/
-
     </script>
 
 </body>
