@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    body {
+      background: #25A9FC;
+    }
+
+    .box {
+      position: relative;
+      margin: auto;
+      display: block;
+      border: solid 4px red;
+      margin-top: 8%;
+      width: 600px;
+      height: 420px;
+      background: none;
+    }
+
+    .head {
+      position: absolute;
+      top: 14.5%;
+      left: 25%;
+      width: 50%;
+      height: 71%;
+      background: #A6BECF;
+      border-radius: 50%;
+    }
+
+    .head-copy {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .ear-left {
+      position: absolute;
+      width: 60%;
+      height: 65%;
+      left: -20%;
+      top: 5%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .ear-right {
+     position: absolute;
+      width: 60%;
+      height: 65%;
+      right: -20%;
+      top: 5%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .inner-ear {
+      position: absolute;
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      background: #819CAF;
+    }
+
+    .eye-right {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      z-index: 3;
+      width: 30%;
+      height: 30%;
+      top: 20%;
+      right: 25%;
+    }
+
+    .eye-left {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      z-index: 3;
+      width: 30%;
+      height: 30%;
+      top: 20%;
+      left: 25%;
+    }
+
+    .pupil-left {
+      border-radius: 50%;
+      background: black;
+      z-index: 6;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      animation-name: moving-eyes-left;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate;
+    }
+
+    .pupil-right {
+      border-radius: 50%;
+      background: black;
+      z-index: 6;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      animation-name: moving-eyes-right;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate;
+    }
+
+    @keyframes moving-eyes-left {
+      0%   {left: 78px;  top: 75px;}
+      20%  {left: 90px;  top: 70px;}
+      40%  {left: 102px; top: 65px;}
+      60%  {left: 114px; top: 60px;}
+      80%  {left: 126px; top: 65px;}
+      100% {left: 138px; top: 70px;}
+    }
+
+    @keyframes moving-eyes-right {
+      0%   {left: 138px; top: 50px;}
+      20%  {left: 150px; top: 45px;}
+      40%  {left: 162px; top: 40px;}
+      60%  {left: 174px; top: 35px;}
+      80%  {left: 186px; top: 40px;}
+      100% {left: 198px; top: 45px;}
+    }
+
+      0%   {left: 10px;  top: 40px;}
+      10%  {left: 120px; top: 50px;}
+      20%  {left: 240px; top: 60px;}
+      30%  {left: 360px; top: 70px;}
+      40%  {left: 480px; top: 50px;}
+      50%  {left: 590px; top: 40px;}
+      60%  {left: 480px; top: 30px;}
+      70%  {left: 360px; top:  0px;}
+      80%  {left: 240px; top: 10px;}
+      90%  {left: 120px; top: 20px;}
+      100% {left: 20px;  top: 35px;}
+
+    .nose {
+      position: absolute;
+      border-radius: 25%;
+      background: brown;
+      z-index: 3;
+      width: 15%;
+      height: 30%;
+      top: 45%;
+      left: 42.5%;
+    }
+
+    .hair-left {
+      position: absolute;
+      top: -10%;
+      left: 20%;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #A6BECF;
+    }
+
+    .hair-right {
+      position: absolute;
+      top: -8%;
+      right: 20%;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #A6BECF;
+    }
+
+    .mukhi {
+      background: black;
+      border-radius: 50%;
+      width: 20px;
+      height: 10px;
+      position: relative;
+      animation-name: flying-mukha;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      /*animation-direction: alternate;*/
+      z-index: 5;
+    }
+
+    @keyframes flying-mukha {
+      0%   {left: 10px;  top: 40px;}
+      10%  {left: 120px; top: 50px;}
+      20%  {left: 240px; top: 60px;}
+      30%  {left: 360px; top: 70px;}
+      40%  {left: 480px; top: 50px;}
+      50%  {left: 590px; top: 40px;}
+      60%  {left: 480px; top: 30px;}
+      70%  {left: 360px; top:  0px;}
+      80%  {left: 240px; top: 10px;}
+      90%  {left: 120px; top: 20px;}
+      100% {left: 20px;  top: 35px;}
+    }
+
+    .wing-left {
+      border: 7px solid grey;
+      position: relative;
+      border-radius: 50%;
+      width: 0px;
+      height: 10px;
+      animation-name: flying-mukha;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      /*animation-direction: alternate;*/
+      z-index: 5;
+    }
+
+    .wing-right {
+      border: 7px solid grey;
+      position: relative;
+      border-radius: 50%;
+      width: 0px;
+      height: 10px;
+      animation-name: flying-mukha;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      /*animation-direction: alternate;*/
+      z-index: 5;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <div class="wing-left"></div>
+    <div class="mukhi"></div>
+    <div class="wing-right"></div>
+  
+    <div class="head">
+
+      <div class="head-copy"></div>
+
+      <div class="ear-left">
+        <div class="inner-ear"></div>
+      </div>
+
+      <div class="ear-right">
+        <div class="inner-ear"></div>
+      </div>
+
+      <div class="eye-left"></div>
+      <div class="pupil-left"></div>
+      
+      <div class="eye-right"></div>
+      <div class="pupil-right"></div>
+      
+      <div class="nose"></div>
+      
+      <div class="hair-left"></div>
+      <div class="hair-right"></div>
+      
+    </div>
+ 
+ </div>
+</body>
+
+<!-- OD, 22-07-2018 --->
+
+<!-- After this example: https://medium.com/coding-artist/a-beginners-guide-to-pure-css-images-ef9a5d069dd2 --->
