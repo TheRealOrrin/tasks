@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+
+    body {
+      background-color: yellow;
+    }
+
+    .abigail {
+      background-color: green;
+      height: 100px;
+      width: 100px;
+      position: relative;
+    }
+
+    .alistair {
+      background-color: purple;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="deirdre" class="abigail"></div>
+
+  <script>
+
+    document.getElementById("deirdre").addEventListener("mouseenter", function(e) {
+      if (deirdre.getAttribute("class") == "abigail") {
+        deirdre.setAttribute("class", "alistair");
+      } else {
+        deirdre.setAttribute("class", "abigail");
+      }
+      followDeirdre(e);
+    });
+
+    function followDeirdre(e) {
+      document.addEventListener("mousemove", function(e) {
+      document.getElementById("deirdre").style.left = e.pageX * .5 + "px";
+      document.getElementById("deirdre").style.top = e.pageY * .5 + "px";
+    });
+    }
+
+  /*cannot add class to an id, but you can add id to class, and class to class*/
+  </script>
+</body>
+
+<!-- OD, 23-07-2018 --->
