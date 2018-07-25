@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      background: #25A9FC;
+    }
+
+    .box {
+      position: relative;
+      border: solid 4px red;
+      width: 600px;
+      height: 420px;
+      margin: 0px;
+      display: block;
+      margin-top: 8%;
+    }
+
+    .head {
+      position: absolute;
+      background: #A6BECF;
+      border-radius: 50%;
+      width: 50%;
+      height: 71%;
+      top: 14.5%;
+      left: 25%;
+      }
+
+    .head-copy {
+      position: absolute;
+      background: #A6BECF;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .ear-left {
+      position: absolute;
+      width: 60%;
+      height: 65%;
+      left: -20%;
+      top: 5%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .ear-right {
+     position: absolute;
+      width: 60%;
+      height: 65%;
+      right: -20%;
+      top: 5%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .inner-ear {
+      position: absolute;
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      background: #819CAF;
+    }
+
+    .eye {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      top: 20%;
+      z-index: 3;
+    }
+
+    .eye-right {
+      right: 25%;
+    }
+
+    .eye-left {
+      left: 25%;
+    }
+
+    .pupil {
+      position: absolute;
+      background: black;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      top: 90px;
+      z-index: 6;
+    }
+
+    .pupil-left {
+      left: 105px;
+    }
+
+    .pupil-right {
+      left: 170px;
+    }
+
+    .nose {
+      position: absolute;
+      background: brown;
+      border-radius: 25%;
+      width: 15%;
+      height: 30%;
+      top: 45%;
+      left: 42.5%;
+      z-index: 3;
+    }
+
+    .hair {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #A6BECF;
+    }
+
+    .hair-left {
+      top: -10%;
+      left: 20%;
+    }
+
+    .hair-right {
+      top: -8%;
+      right: 20%;
+    }
+
+    .fly {
+      position: relative;
+      z-index: 5;
+    }
+
+    .fly-wing {
+      background: grey;
+      border-radius: 50%;
+      width: 15px;
+      height: 20px;
+    }
+
+    .fly-body {
+      background: black;
+      border-radius: 50%;
+      width: 20px;
+      height: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <div id="fly" class="fly">
+      <div class="fly-wing"></div>
+      <div class="fly-body"></div>
+      <div class="fly-wing"></div>
+    </div>
+  
+    <div class="head">
+
+      <div class="head-copy"></div>
+
+      <div class="ear-left"><div class="inner-ear"></div></div>
+      <div class="ear-right"><div class="inner-ear"></div></div>
+
+      <div class="eye eye-left"></div>
+      <div id="pupil-left" class="pupil pupil-left"></div>
+            
+      <div class="eye eye-right"></div>
+      <div id="pupil-right" class="pupil pupil-right"></div>
+      
+      <div class="nose"></div>
+      
+      <div class="hair hair-left"></div>
+      <div class="hair hair-right"></div>
+      
+    </div>
+ 
+  </div>
+
+  <script>
+
+    document.addEventListener("mousemove", function(e) {
+
+    if (e.pageX < 600) {
+        document.getElementById("fly").style.left = e.pageX + "px";
+      } else {
+        document.getElementById("fly").style.left = 580 + "px";
+      }
+      
+    if (e.pageY < 420) {
+        document.getElementById("fly").style.top  = e.pageY + "px";
+      } else {
+        document.getElementById("fly").style.top  = 370 + "px";        
+      }
+
+     document.getElementById("pupil-left").style.left = 105 + e.pageX/20 + "px";
+     document.getElementById("pupil-left").style.top  = 90  + e.pageY/20 + "px";
+
+    document.getElementById("pupil-right").style.left = 170 + e.pageX/20 + "px";
+    document.getElementById("pupil-right").style.top  = 90  + e.pageY/20 + "px";
+    });
+
+  </script>
+</body>
+
+<!-- OD, 25-07-2018 -->
