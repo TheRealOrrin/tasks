@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <title>The weather in Beverwijk</title>
+
+  <style>
+    body {
+      background-color: blue;
+    }
+  </style>
+
+  <style>
+    body {
+      background-color: grey;
+    }
+  </style>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="app"></div>
+<div id="picture"></div>
+
+<script>
+  setInterval(updateWeather(), 60000);
+
+  function updateWeather() {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=beverwijk&APPID=1c3a6a44a55ad0f2f63039fefbc7bd13')
+      .then(response => response.json())
+      .then(json => {
+        document.getElementById('app').innerHTML = `The weather is <b>${json.weather[0].main.toLowerCase()}</b> in ${json.name}.`;
+        document.getElementById('picture').innerHTML = `<img src='https://openweathermap.org/img/w/${json.weather[0].icon}.png?APPID=1c3a6a44a55ad0f2f63039fefbc7bd13'></img>`;
+
+    setStyle(json.weather[0].id);
+      });
+
+    function setStyle(weatherType) {
+      resetStyle();
+        if(weatherType >= 200 && weatherType < 600) {
+          document.styleSheets[0].disabled = false;
+        }
+        else if(weatherType > 600 && weatherType < 800) {
+          document.styleSheets[1].disabled = false;
+        }
+        else {
+          document.styleSheets[2].disabled = false;
+        }
+      }
+
+      function resetStyle() {
+        document.styleSheets[0].disabled = true;
+        document.styleSheets[1].disabled = true;
+        document.styleSheets[2].disabled = true;
+      }
+  }
+</script>
+</body>
+
+<!-- OD, 21-08-2018 -->
